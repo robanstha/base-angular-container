@@ -1,0 +1,15 @@
+services:
+  angular-frontend:
+    build:
+      context: .
+    container_name: angular-frontend
+    image: angular-frontend
+    ports:
+      - "4200:4200"
+    volumes:
+      - './src:/src'
+    # restart: always
+    working_dir: /src
+    command:
+    - npm
+    - start
