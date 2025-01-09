@@ -32,27 +32,20 @@ git clone https://github.com/robanstha/base-angular-container.git
 cd base-angular-container
 ```
 
-### 2. Install Dependencies
-```
-Run the following command to install all required Node.js dependencies:
-npm install
-```
-
-### 3. Build the Angular Application
-
-Compile the Angular application for production:
-```
-ng build --prod
-```
-
-### 4. Build the Docker Image
-
+### 2. Build docker image
+(Note: Edit container and image name in docker-compose as per required)
 Use Docker compose to build the container image for your Angular application:
 ```
 docker-compose build
 ```
 
-### 5. Run the Docker Container
+### 3. Install Dependencies
+Run the following command to install all required Node.js dependencies:
+```
+docker run --name angular-frontend -it --rm -p 4200:4200 -v ./src:/src  angular-frontend npm install
+```
+
+### 4. Run the Docker Container
 
 Start the Docker container and expose it on port 4200:
 ```
